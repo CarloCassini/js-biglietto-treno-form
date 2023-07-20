@@ -1,7 +1,7 @@
 console.log("js ok");
 
 // dichiarazione delle variabili
-const userName = document.getElementById("user-name").value;
+let userName;
 let userKm;
 let userEta;
 const MyButton = document.getElementById("send-button");
@@ -10,6 +10,7 @@ let prezzoSconto;
 
 // al momento gestisco solo km e eta
 MyButton.addEventListener("click", function () {
+  userName = document.getElementById("user-name").value;
   userKm = parseFloat(document.getElementById("user-km").value);
   userEta = parseInt(document.getElementById("user-eta").value);
 
@@ -23,12 +24,15 @@ MyButton.addEventListener("click", function () {
   console.log(prezzoViaggio);
 
   if (isNaN(userKm) || isNaN(userEta)) {
+    document.getElementById("again").innerHTML = String(
+      "ricarica e inserisci valori numerici"
+    );
     console.log(" ricarica e inserisci valori numerici ");
   } else {
     if (userEta < 18) {
       prezzoSconto = prezzoViaggio * 0.2;
       prezzoViaggio = prezzoViaggio - prezzoSconto;
-    } else if (Eta >= 65) {
+    } else if (userEta >= 65) {
       prezzoSconto = prezzoViaggio * 0.4;
       prezzoViaggio = prezzoViaggio - prezzoSconto;
     }
@@ -39,6 +43,8 @@ MyButton.addEventListener("click", function () {
   }
 
   document.getElementById("output-name").innerHTML = userName;
-  document.getElementById("output-price").innerHTML = prezzoViaggio;
-  document.getElementById("output-discount").innerHTML = prezzoSconto;
+  document.getElementById("output-price").innerHTML =
+    prezzoViaggio.toFixed(2) + " €";
+  document.getElementById("output-discount").innerHTML =
+    prezzoSconto.toFixed(2) + " €";
 });
