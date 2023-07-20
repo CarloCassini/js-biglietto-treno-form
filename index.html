@@ -26,26 +26,82 @@
     <script type="text/javascript" src="./jss/main.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <h1 class="text-center">Calcola il prezzo del tuo biglietto</h1>
-      <div
-        class="container d-flex align-items-center justify-content-between debug"
-      >
-        <!-- form per il kmetraggio -->
-        <div class="mb-3">
-          <label class="form-label">quanti km vuoi fare?</label>
-          <input type="number" class="form-control" id="user-km" />
-        </div>
-        <!-- form per l'età -->
-        <div class="mb-3">
-          <label class="form-label">qual'è la tua età?</label>
-          <input type="number" class="form-control" id="user-eta" />
-        </div>
+    <div class="container my-3">
+      <div class="card">
+        <div class="card-header">Calcola il prezzo del tuo biglietto</div>
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between">
+            <!-- nome -->
+            <div class="mb-3">
+              <label class="form-label">nome passeggero </label>
+              <input type="text" class="form-control" id="user-name" />
+            </div>
+            <!-- form per il kmetraggio -->
+            <div class="mb-3">
+              <label class="form-label">quanti km vuoi fare?</label>
+              <input type="number" class="form-control" id="user-km" />
+            </div>
+            <!-- form per l'età -->
+            <div class="mb-3">
+              <label class="form-label">qual'è la tua età?</label>
+              <input type="number" class="form-control" id="user-eta" />
+            </div>
 
-        <button type="button" class="btn btn-outline-danger" id="send-button">
-          calcola
-        </button>
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              id="send-button"
+            >
+              calcola
+            </button>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <div class="container my-3">
+      <div class="card">
+        <div class="card-header" id="again">risultato:</div>
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between">
+            <!-- nome -->
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <div
+                  class="d-flex align-items-center justify-content-center fs-1 fw-bolder"
+                  id="output-name"
+                ></div>
+                <p class="card-text text-center fs-4">nome del passeggero</p>
+              </div>
+            </div>
+            <!-- price -->
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <div
+                  class="d-flex align-items-center justify-content-center fs-1 fw-bolder"
+                  id="output-price"
+                ></div>
+                <p class="card-text text-center fs-4">prezzo del biglietto</p>
+              </div>
+            </div>
+            <!-- discount -->
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <div
+                  class="d-flex align-items-center justify-content-center fs-1 fw-bolder"
+                  id="output-discount"
+                ></div>
+                <p class="card-text text-center fs-4">sconto applicato</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- per l'output -->
+    <div class="container">
+      <div>DETTAGLIO PASSEGGERI</div>
     </div>
   </body>
 </html>
